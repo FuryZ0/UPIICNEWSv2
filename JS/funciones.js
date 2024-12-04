@@ -37,3 +37,28 @@ $(document).ready(function () {
         }
     });
 });
+
+$('#check').change(function () {
+   if ($(this).is(":checked")) {
+       document.getElementById("nuevacontra").disabled = false;
+       document.getElementById("nuevacontra").required = true;
+   } else {
+       document.getElementById("nuevacontra").disabled = true;
+       document.getElementById("nuevacontra").value = "";
+       document.getElementById("nuevacontra").required = false;
+   }
+});
+
+$('#check_elim').change(function () {
+    if ($(this).is(":checked")) {
+        document.getElementById("block_uno").disabled = false;
+        document.getElementById("block_uno").required = true;
+        document.getElementById("block_dos").disabled = false;
+        document.getElementById("block_dos").required = true;
+    } else {
+        document.getElementById("block_uno").disabled = true;
+        document.getElementById("block_dos").disabled = true;
+        document.getElementById("block_uno").value = "";
+        document.getElementById("block_dos").value = "";
+    }
+});

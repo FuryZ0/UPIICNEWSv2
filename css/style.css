@@ -212,6 +212,13 @@ input.error {
   color: red;
 }
 
+.cont_boton{
+  padding: 30px 0;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 @media screen and (max-width: 1000px) {
   #bar {
     width: 100%;
