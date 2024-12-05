@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Iniciar sesion</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/styleicon.css">
 </head>
 <body>
 <?php
-include ("verifsesion.php");
+include("verifsesion.php");
 ?>
 <form action="../php/login.php" method="POST" class="formulario_ingr" id="inicios_for">
   <h2 class="info_h2">Acceder</h2>

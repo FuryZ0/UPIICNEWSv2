@@ -1,6 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+../composer.json
+../UPIICNEWSv2.iml
+../.idea
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files

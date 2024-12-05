@@ -1,16 +1,14 @@
 <!doctype html>
 <html lang="es" xmlns="http://www.w3.org/1999/html">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UPIICNEWS</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/styleicon.css">
 </head>
 <body>
 <?php
-include ("verifsesion.php");
+include("verifsesion.php");
 ?>
 <div class="contenedor">
   <h2 class="titulo_cont">*Inserte titulo de evento*</h2>

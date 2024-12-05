@@ -8,17 +8,19 @@ include("../php/conexion.php");
     <title>Panel de control del usuario</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
 </head>
 <body>
 <?php
-include ("verifsesion.php");
+include("verifsesion.php");
 ?>
 <h1>Bienvenido <?php echo $_SESSION['cliente']; ?></h1>
 
 <div class="perfil">
     <h1 class="display-4 text-center my-5">Informacion del perfil</h1>
     <div>
-        <table class="table table-light table-hover mx-auto text-center">
+        <table class="table table-light table-hover mx-auto text-center" id="tabla_user">
             <?php
                 $cliente = $_SESSION['cliente'];
                 $data = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$cliente'");
@@ -60,7 +62,7 @@ include ("verifsesion.php");
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="cambiar">
                 <?php
                 $cliente = $_SESSION['cliente'];
                 $data = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$cliente'");
@@ -69,19 +71,19 @@ include ("verifsesion.php");
                 ?>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Usuario</label>
-                    <input type="text" class="form-control" value="<?php echo $consulta['usuario']; ?>" disabled>
+                    <input type="text" class="form-control" name="usuario" value="<?php echo $consulta['usuario']; ?>" disabled>
                 </div>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Correo</label>
-                    <input type="text" class="form-control" value="<?php echo $consulta['email']; ?>" disabled>
+                    <input type="text" class="form-control" name="correo" value="<?php echo $consulta['email']; ?>" disabled>
                 </div>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Contraseña actual</label>
-                    <input type="password" class="form-control" value="<?php echo $consulta['contrasena']; ?>" disabled>
+                    <input type="password" class="form-control" name="contra" value="">
                 </div>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Nueva contraseña</label>
-                    <input type="password" class="form-control" id="nuevacontra" disabled required >
+                    <input type="password" class="form-control" name="contranueva" id="nuevacontra" disabled required >
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="check">
@@ -94,7 +96,7 @@ include ("verifsesion.php");
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Confirmar cambios</button>
+            <button type="button" class="btn btn-primary" id="actualizar">Confirmar cambios</button>
         </div>
     </div>
 </div>
@@ -108,30 +110,30 @@ include ("verifsesion.php");
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="../php/eliminar.php" method="POST">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Contraseña de seguridad</label>
-                        <input type="password" class="form-control" id="block_uno" disabled required>
+                        <input type="password" class="form-control" name="elimcontra" id="block_uno" disabled required>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Confirmar contraseña de seguridad</label>
-                        <input type="password" class="form-control" id="block_dos" disabled required>
+                        <input type="password" class="form-control" name="confcontra" id="block_dos" disabled required>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check_elim">
                         <label class="form-check-label" for="flexCheckDefault"> Estoy seguro de eliminar mi cuenta </label>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-danger">Confirmar</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger">Confirmar</button>
             </div>
         </div>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Advertencia:</strong> Al borrar la cuenta perderás toda la información en la base de datos
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Advertencia:</strong> Al borrar la cuenta perderás toda la información en la base de datos
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
 <script
@@ -141,5 +143,6 @@ include ("verifsesion.php");
 </script>
 <script type="text/javascript" src="../JS/funciones.js"></script>
 <script type="text/javascript" src="../JS/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
 </body>
 </html>

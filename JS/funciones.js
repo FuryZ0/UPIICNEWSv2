@@ -62,3 +62,28 @@ $('#check_elim').change(function () {
         document.getElementById("block_dos").value = "";
     }
 });
+
+$('#actualizar').click(function () {
+    var recolec = $('#cambiar').serialize();
+
+    $.ajax({
+        url: '../php/actualizar.php',
+        type: 'POST',
+        data: recolec,
+
+        success: function (vs) {
+
+            if (vs == "1") {
+                alertify.success("Datos actualizados");
+                $('#tabla_user').load('../Nav/usuario.php #tabla_user');
+                $('#mod_per').modal('hide');
+            } else if (vs == "2") {
+                alertify.success("Datos y contraseña actualizados");
+                $('#tabla_user').load('../Nav/usuario.php #tabla_user');
+                $('#mod_per').modal('hide');
+            } else {
+                alertify.error("La contraseña no es la correcta");
+            }
+        }
+    })
+});

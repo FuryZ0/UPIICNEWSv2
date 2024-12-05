@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/styleicon.css">
 </head>
 <body>
 <?php
-include ("verifsesion.php");
+include("verifsesion.php");
 ?>
 <form action="../php/registro.php" method="POST" class="formulario_ingr" id="registro_for">
     <h2 class="info_h2">Registrarse</h2>
