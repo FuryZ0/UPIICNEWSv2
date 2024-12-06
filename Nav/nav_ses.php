@@ -1,3 +1,6 @@
+<?php
+include ("../php/segcode.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

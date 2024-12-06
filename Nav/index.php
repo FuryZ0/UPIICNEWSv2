@@ -1,3 +1,6 @@
+<?php
+include ("../php/segcode.php");
+?>
 <!doctype html>
 <html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -5,17 +8,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UPIICNEWS</title>
   <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <?php
 include("verifsesion.php");
 ?>
-<div class="contenedor">
-  <h2 class="titulo_cont">*Inserte titulo de evento*</h2>
-  <p><span class= "parrafo_cont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies nibh at erat eleifend, non tincidunt urna luctus. Integer quis pharetra ex. Cras venenatis gravida interdum. Vivamus venenatis neque ligula, ac feugiat enim fringilla sit amet. Quisque malesuada sapien at mi viverra semper. Vestibulum vitae congue felis, ac rhoncus ligula. Donec feugiat ipsum dignissim erat luctus fermentum sit amet ac tortor. Morbi tempus lectus quam, pharetra eleifend mauris feugiat ultricies. Donec sed enim in leo faucibus lobortis a in nisi. In in neque quis turpis tempor tincidunt ut sit amet erat. Vestibulum eleifend, sem et congue sollicitudin, eros massa elementum leo, ac blandit augue erat eu dolor.</span></p>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="../img/Logotipo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Evento 1</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="../img/Logotipo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Evento 2</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="../img/Logotipo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Evento 3</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="../img/Logotipo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Evento 4</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
 </div>
-<footer class="foot">
-  <p class="foot_p">Pagina web protegida por JOHNYCOP &copy;</p>
-</footer>
+<script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+include ("../php/sesion_iniciada.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

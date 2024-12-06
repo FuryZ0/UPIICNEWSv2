@@ -3,51 +3,58 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UPIICNEWS</title>
+    <title>Consultar</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <?php
 include("verifsesion.php");
 ?>
-<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-primary d-flex mx-auto mb-3">Agregar usuario</button>
+<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-primary d-flex mx-auto mb-3">
+    Agregar usuario
+</button>
 <table class="table table-light table-hover" id="table_adm">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Email</th>
-            <th>Contraseña</th>
-            <th>Rol</th>
-            <th></th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Email</th>
+        <th>Contraseña</th>
+        <th>Rol</th>
+        <th></th>
+        <th></th>
+    </tr>
     </thead>
 
     <?php
     include('../php/conexion.php');
     $data = mysqli_query($conexion, "SELECT * FROM usuarios");
 
-    while($consulta = mysqli_fetch_array($data)) {
-        $arreglo = $consulta['id_usuario'].','.$consulta['usuario'].','.$consulta['email'].','.$consulta['contrasena'].','.$consulta['rol'];
+    while ($consulta = mysqli_fetch_array($data)) {
+        $arreglo = $consulta['id_usuario'] . ',' . $consulta['usuario'] . ',' . $consulta['email'] . ',' . $consulta['contrasena'] . ',' . $consulta['rol'];
 
-    ?>
+        ?>
 
-    <tbody>
+        <tbody>
         <td><?php echo $consulta['id_usuario']; ?></td>
         <td><?php echo $consulta['usuario']; ?></td>
         <td><?php echo $consulta['email']; ?></td>
         <td><?php echo $consulta['contrasena']; ?></td>
         <td><?php echo $consulta['rol']; ?></td>
         <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-success" onclick="modificar('<?php echo $arreglo ?>')">Modificar</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-success"
+                    onclick="modificar('<?php echo $arreglo ?>')">Modificar
+            </button>
         </td>
         <td>
-            <button type="button"  data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo ?>')">Eliminar</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-danger"
+                    onclick="eliminar('<?php echo $arreglo ?>')">Eliminar
+            </button>
         </td>
-    </tbody>
-    <?php
+        </tbody>
+        <?php
     }
     ?>
 </table>
@@ -81,6 +88,7 @@ include("verifsesion.php");
                         <select class="form-select form-control" id="adm_rol" name="adm_rol">
                             <option value="0">0</option>
                             <option value="1">1</option>
+                            <option value="2">2</option>
                         </select>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -116,12 +124,13 @@ include("verifsesion.php");
                         <label for="recipient-name" class="col-form-label">Contraseña</label>
                         <input type="text" class="form-control" id="contra_" name="contra_">
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Rol</label>
                         <select class="form-select form-control" id="rol_" name="rol_">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
                         </select>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -158,11 +167,13 @@ include("verifsesion.php");
 </div>
 
 <script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous">
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 <script src="../JS/funcioncrud.js"></script>
 
 </body>

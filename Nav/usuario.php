@@ -1,5 +1,7 @@
 <?php
 include("../php/conexion.php");
+include ("../php/sesion_noinic.php");
+include ("../php/segcode.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">

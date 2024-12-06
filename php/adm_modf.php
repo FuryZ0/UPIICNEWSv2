@@ -2,7 +2,7 @@
 
 include ("conexion.php");
 
-$id = $_POST['usuario_'];
+$id = $_POST['id_'];
 $usuario = $_POST['usuario_'];
 $correo = $_POST['email_'];
 $contra = $_POST['contra_'];
