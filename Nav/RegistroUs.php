@@ -1,5 +1,5 @@
 <?php
-include ("../php/sesion_iniciada.php");
+include("../php/sesion_iniciada.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +25,8 @@ include("verifsesion.php");
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous">
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../JS/funciones.js"></script>
 </body>
 </html>

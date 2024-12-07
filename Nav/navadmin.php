@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,6 +29,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categorías</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CRUD.php">Administrar usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CRUDEv.php">Administrar eventos</a>
+                </li>
 
 
                 <li class="nav-item dropdown">
@@ -44,3 +54,4 @@
 </body>
 <script type="text/javascript" src="../JS/bootstrap.bundle.min.js"></script>
 </html>
+

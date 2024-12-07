@@ -18,7 +18,7 @@ while ($consulta = mysqli_fetch_array($data)) {
     $verif = $consulta['autentificacion'];
 }
 
-if($verif == $numero) {
+if ($verif == $numero) {
     $change = mysqli_query($conexion, "UPDATE usuarios SET conectado = 'Si' WHERE usuario = '$usuario'");
     echo '
     <script>

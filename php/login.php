@@ -5,7 +5,7 @@ include('conexion.php');
 $usuario = $_POST['usuario'];
 $contra = $_POST['pass'];
 
-$resultado = mysqli_query($conexion,"SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contra'");
+$resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contra'");
 
 
 $fila = mysqli_num_rows($resultado);
@@ -17,13 +17,16 @@ if ($fila > 0) {
     while ($consulta = mysqli_fetch_array($resultado)) {
         $verif = $consulta['autentificacion'];
         $user = $consulta['usuario'];
+        $conect = $consulta['conectado'];
     }
 
-    $change = mysqli_query($conexion, "UPDATE usuarios SET conectado = 'No' WHERE usuario = '$user'");
-
-    if($verif <= 0) {
+    if ($verif == 0) {
+        $change = mysqli_query($conexion, "UPDATE usuarios SET conectado = 'No' WHERE usuario = '$user'");
         header("location:../Nav/generator.php");
+    } else if ($conect == "Si") {
+        header("location:../Nav/index.php");
     } else {
+        $change = mysqli_query($conexion, "UPDATE usuarios SET conectado = 'No' WHERE usuario = '$user'");
         header("location:../Nav/Ingrcodig.php");
     }
 } else {

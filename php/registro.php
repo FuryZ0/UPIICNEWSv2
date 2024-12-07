@@ -5,7 +5,7 @@ $usuario = $_POST['usuario'];
 $email = $_POST['email'];
 $pass = $_POST['contra'];
 
-$verificacion = mysqli_query($conexion,"SELECT * FROM usuarios WHERE usuario = '$usuario'");
+$verificacion = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario'");
 
 $r = mysqli_num_rows($verificacion);
 

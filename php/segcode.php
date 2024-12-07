@@ -11,7 +11,7 @@ while ($consulta = mysqli_fetch_array($data)) {
     $autf = $consulta['conectado'];
 }
 
-if($autf == "No") {
+if ($autf == "No") {
     echo '
     <script>
     alert("Aún no has activado el código de autentificación");

@@ -13,16 +13,25 @@
 include("../Nav/navadmin.php");
 ?>
 <button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-primary d-flex mx-auto mb-3">
-    Agregar usuario
+    Agregar evento
 </button>
 <table class="table table-light table-hover" id="table_adm">
     <thead>
     <tr>
         <th>ID</th>
-        <th>Usuario</th>
-        <th>Email</th>
-        <th>Contraseña</th>
-        <th>Rol</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Ubicación</th>
+        <th>Tag</th>
+        <th>No. likes</th>
+        <th>Día</th>
+        <th>Hora de inicio</th>
+        <th>Hora de fin</th>
+        <th>Red social 1</th>
+        <th>Link</th>
+        <th>Red social 2</th>
+        <th>Link</th>
+        <th>Imagen</th>
         <th></th>
         <th></th>
     </tr>
@@ -30,7 +39,7 @@ include("../Nav/navadmin.php");
 
     <?php
     include('../php/conexion.php');
-    $data = mysqli_query($conexion, "SELECT * FROM usuarios");
+    $data = mysqli_query($conexion, "SELECT * FROM eventos");
 
     while ($consulta = mysqli_fetch_array($data)) {
         $arreglo = $consulta['id_usuario'] . ',' . $consulta['usuario'] . ',' . $consulta['email'] . ',' . $consulta['contrasena'] . ',' . $consulta['rol'];
@@ -38,11 +47,20 @@ include("../Nav/navadmin.php");
         ?>
 
         <tbody>
-        <td><?php echo $consulta['id_usuario']; ?></td>
-        <td><?php echo $consulta['usuario']; ?></td>
-        <td><?php echo $consulta['email']; ?></td>
-        <td><?php echo $consulta['contrasena']; ?></td>
-        <td><?php echo $consulta['rol']; ?></td>
+        <td><?php echo $consulta['id_evento']; ?></td>
+        <td><?php echo $consulta['nombreev']; ?></td>
+        <td><?php echo $consulta['descripcionev']; ?></td>
+        <td><?php echo $consulta['ubicacionev']; ?></td>
+        <td><?php echo $consulta['tagsev']; ?></td>
+        <td><?php echo $consulta['numlikesev']; ?></td>
+        <td><?php echo $consulta['diaev']; ?></td>
+        <td><?php echo $consulta['horainicioev']; ?></td>
+        <td><?php echo $consulta['horafinev']; ?></td>
+        <td><?php echo $consulta['redsocial1ev']; ?></td>
+        <td><?php echo $consulta['linkred1']; ?></td>
+        <td><?php echo $consulta['redsocial2ev']; ?></td>
+        <td><?php echo $consulta['linkred2']; ?></td>
+        <td><?php echo $consulta['imgeve']; ?></td>
         <td>
             <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-success"
                     onclick="modificar('<?php echo $arreglo ?>')">Modificar
@@ -103,7 +121,7 @@ include("../Nav/navadmin.php");
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar datos de usuario</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar datos de evento</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -113,7 +131,7 @@ include("../Nav/navadmin.php");
                         <input type="text" class="form-control" id="id_" name="id_" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Usuario</label>
+                        <label for="recipient-name" class="col-form-label">Título</label>
                         <input type="text" class="form-control" id="usuario_" name="usuario_">
                     </div>
                     <div class="mb-3">
@@ -145,7 +163,7 @@ include("../Nav/navadmin.php");
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro de eliminar a este usuario?</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro de eliminar este evento?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -155,7 +173,7 @@ include("../Nav/navadmin.php");
                         <input type="text" class="form-control" id="id_elim" name="id_elim" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label" id="userlabel_elim">Usuario</label>
+                        <label for="recipient-name" class="col-form-label" id="userlabel_elim">Título</label>
                         <input type="text" class="form-control" id="usuario_elim" name="usuario_elim" readonly>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -167,9 +185,9 @@ include("../Nav/navadmin.php");
 </div>
 
 <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous">
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
 </script>
 <script src="../JS/funcioncrud.js"></script>
 </body>

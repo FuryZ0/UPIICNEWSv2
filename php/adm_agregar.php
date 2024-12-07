@@ -1,6 +1,6 @@
 <?php
 
-include ("conexion.php");
+include("conexion.php");
 
 $usuario = $_POST['adm_usuario'];
 $correo = $_POST['adm_correo'];
@@ -10,6 +10,6 @@ $rol = $_POST['adm_rol'];
 $insertar = mysqli_query($conexion, "INSERT INTO usuarios(usuario, email, contrasena, rol, conectado)
 VALUES ('$usuario','$correo','$contra',$rol,'Si')");
 
-$resultado = mysqli_query($conexion,$insertar);
+$resultado = mysqli_query($conexion, $insertar);
 
 ?>

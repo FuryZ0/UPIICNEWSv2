@@ -1,5 +1,5 @@
 <?php
-include ("conexion.php");
+include("conexion.php");
 session_start();
 
 $contra = "";
@@ -22,7 +22,7 @@ if ($actualc == $nuevac) {
     if ($actualc == $contra) {
 
         $eliminar = "DELETE FROM usuarios WHERE id_usuario = $id AND usuario = '$user'";
-        $resultado = mysqli_query($conexion,$eliminar);
+        $resultado = mysqli_query($conexion, $eliminar);
 
         echo '
     <script>

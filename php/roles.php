@@ -11,7 +11,7 @@ while ($consulta = mysqli_fetch_array($datos)) {
     $rol = $consulta['rol'];
 }
 
-if($rol == 0) {
+if ($rol == 0) {
     include("admin.php");
 } else if ($rol == 1) {
     include("editor.php");

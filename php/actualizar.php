@@ -18,7 +18,7 @@ while ($consulta = mysqli_fetch_array($data)) {
 }
 
 if ($contra == $pass) {
-    if($newpass == "") {
+    if ($newpass == "") {
         $cambiar = "UPDATE usuarios SET email = '$correo' WHERE id_usuario = $id";
 
         echo '1';
