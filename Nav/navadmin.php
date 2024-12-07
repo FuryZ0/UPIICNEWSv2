@@ -1,6 +1,8 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php, nombres o ids de formulario -->
 <?php
 error_reporting(0);
 session_start();
+include('../php/roles.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

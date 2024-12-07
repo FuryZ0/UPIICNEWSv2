@@ -1,3 +1,4 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
 <?php
 include("../php/conexion.php");
 include("../php/sesion_noinic.php");
@@ -81,11 +82,11 @@ include("verifsesion.php");
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Contraseña actual</label>
-                        <input type="password" class="form-control" name="contra" value="" minlength="8" maxlength="20">
+                        <input type="password" class="form-control" required name="contra" value="" minlength="8" maxlength="20">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Nueva contraseña</label>
-                        <input type="password" class="form-control" name="contranueva" id="nuevacontra" disabled
+                        <input type="password" class="form-control" required name="contranueva" id="nuevacontra" disabled
                                required minlength="8" maxlength="20">
                     </div>
                     <div class="form-check">
@@ -116,11 +117,11 @@ include("verifsesion.php");
                 <form action="../php/eliminar.php" method="POST">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Contraseña de seguridad</label>
-                        <input type="password" class="form-control" name="elimcontra" id="block_uno" disabled required>
+                        <input type="password" class="form-control" required name="elimcontra" id="block_uno" disabled required>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Confirmar contraseña de seguridad</label>
-                        <input type="password" class="form-control" name="confcontra" id="block_dos" disabled required>
+                        <input type="password" class="form-control" required name="confcontra" id="block_dos" disabled required>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check_elim">

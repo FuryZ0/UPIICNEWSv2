@@ -1,3 +1,4 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
 <?php
 include("../php/segcode.php");
 ?>
@@ -41,7 +42,7 @@ if ($rol == 1 || $rol == 2) {
         ?>
         <div class="col">
             <div class="card">
-                <img src="../img/Logotipo.png" class="card-img-top" alt="...">
+                <img src="../<?php echo $consulta['imgeve'];?>" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $consulta['nombreev']; ?></h5>
                     <p class="card-text">

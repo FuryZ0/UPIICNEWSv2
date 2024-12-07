@@ -1,3 +1,7 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
+<?php
+include('../php/roles.php');
+?>
 <!doctype html>
 <html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -42,7 +46,9 @@ include("../Nav/navadmin.php");
     $data = mysqli_query($conexion, "SELECT * FROM eventos");
 
     while ($consulta = mysqli_fetch_array($data)) {
-        $arreglo = $consulta['id_usuario'] . ',' . $consulta['usuario'] . ',' . $consulta['email'] . ',' . $consulta['contrasena'] . ',' . $consulta['rol'];
+        $arreglo = $consulta['id_evento'] . ',' . $consulta['nombreev'] . ',' . $consulta['descripcionev'] . ',' . $consulta['ubicacionev'] . ',' . $consulta['tagsev']
+            . ',' . $consulta['numlikesev']  . ',' . $consulta['diaev']  . ',' . $consulta['horainicioev']  . ',' . $consulta['horafinev']  . ',' . $consulta['redsocial1ev']  . ',' . $consulta['linkred1']
+            . ',' . $consulta['redsocial2ev']  . ',' . $consulta['linkred2']  . ',' . $consulta['imgeve'];
 
         ?>
 
@@ -76,39 +82,99 @@ include("../Nav/navadmin.php");
     }
     ?>
 </table>
-<footer class="foot">
-    <p class="foot_p">Pagina web protegida por JOHNYCOP &copy;</p>
-</footer>
 
 <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuario</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar evento</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="form_agr">
+                <form id="form_agr" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Usuario</label>
-                        <input type="text" class="form-control" id="adm_usuario" name="adm_usuario">
+                        <label for="recipient-name" class="col-form-label">Título</label>
+                        <input type="text" class="form-control" required id="adm_tit" name="adm_tit">
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="text" class="form-control" id="adm_correo" name="adm_correo">
+                        <label for="recipient-name" class="col-form-label">Descripción</label>
+                        <textarea class="form-control" required id="adm_desc" name="adm_desc"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Contraseña</label>
-                        <input type="text" class="form-control" id="adm_contra" name="adm_contra">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Rol</label>
-                        <select class="form-select form-control" id="adm_rol" name="adm_rol">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                        <label for="recipient-name" class="col-form-label">Ubicación</label>
+                        <select class="form-select form-control" required id="adm_ubi" name="adm_ubi">
+                            <option value="Estacionamiento">Estacionamiento</option>
+                            <option value="AuditorioA">Auditorio A</option>
+                            <option value="AuditorioB">Auditorio B</option>
+                            <option value="Pecera">Pecera</option>
+                            <option value="Campoamericano">Campo de americano</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tag</label>
+                        <select class="form-select form-control" required id="adm_tag" name="adm_tag">
+                            <option value="Escolares">Escolares</option>
+                            <option value="Comunitarios">Comunitarios</option>
+                            <option value="Externos">Externos</option>
+                            <option value="Deportivos">Deportivos</option>
+                            <option value="Esports">Esports</option>
+                        </select>
+                    </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Día</label>
+                            <input type="date" class="form-control" name="adm_dia" required id="adm_dia">
+                        </div>
+                            <script>
+                                // Obtener el input de tipo date
+                                const inputFecha = document.getElementById('adm_dia');
+                                // Obtener la fecha de hoy en formato ISO (YYYY-MM-DD)
+                                const hoy = new Date();
+                                const mesAdelante = new Date();
+                                mesAdelante.setMonth(hoy.getMonth() + 1); // Sumar un mes
+                                // Formatear las fechas al formato YYYY-MM-DD
+                                const formatoISO = (adm_dia) => adm_dia.toISOString().split('T')[0];
+                                // Establecer los valores de min y max
+                                inputFecha.min = formatoISO(hoy);
+                                inputFecha.max = formatoISO(mesAdelante);
+                            </script>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Hora de inicio</label>
+                            <input type="time" class="form-control" required name="adm_horai" id="adm_horai" min="06:00" max="22:00">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Hora de término</label>
+                            <input type="time" class="form-control" required name="adm_horaf" id="adm_horaf" min="06:00" max="22:00">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Red social 1</label>
+                            <select class="form-select form-control" id="adm_red1" name="adm_red1">
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Discord">Discord</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Link 1</label>
+                            <input type="text" class="form-control" required id="adm_link1" name="adm_link1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Red social 2</label>
+                            <select class="form-select form-control" id="adm_red2" name="adm_red2">
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Discord">Discord</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Link 2</label>
+                            <input type="text" class="form-control" required id="adm_link2" name="adm_link2">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Imagen</label>
+                            <input type="file" class="form-control" required name="adm_img" id="adm_img" size="10">
+                        </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="agregar_adm">Agregar</button>
                 </form>
@@ -125,34 +191,96 @@ include("../Nav/navadmin.php");
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="form_adm">
+                <form id="form_adm" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">ID</label>
-                        <input type="text" class="form-control" id="id_" name="id_" readonly>
+                        <input type="text" class="form-control" required id="ide_" name="ide_" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Título</label>
-                        <input type="text" class="form-control" id="usuario_" name="usuario_">
+                        <input type="text" class="form-control" required id="tit_" name="tit_">
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="text" class="form-control" id="email_" name="email_">
+                        <label for="recipient-name" class="col-form-label">Descripción</label>
+                        <textarea class="form-control" required id="desc_" name="desc_"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Contraseña</label>
-                        <input type="text" class="form-control" id="contra_" name="contra_">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Rol</label>
-                        <select class="form-select form-control" id="rol_" name="rol_">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                        <label for="recipient-name" class="col-form-label">Ubicación</label>
+                        <select class="form-select form-control" required id="ubi_" name="ubi_">
+                            <option value="Estacionamiento">Estacionamiento</option>
+                            <option value="AuditorioA">Auditorio A</option>
+                            <option value="AuditorioB">Auditorio B</option>
+                            <option value="Pecera">Pecera</option>
+                            <option value="Campoamericano">Campo de americano</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tag</label>
+                        <select class="form-select form-control" required id="tag_" name="tag_">
+                            <option value="Escolares">Escolares</option>
+                            <option value="Comunitarios">Comunitarios</option>
+                            <option value="Externos">Externos</option>
+                            <option value="Deportivos">Deportivos</option>
+                            <option value="Esports">Esports</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Día</label>
+                        <input type="date" class="form-control" name="dia_" required id="dia_">
+                    </div>
+                    <script>
+                        // Obtener el input de tipo date
+                        const inputFecha = document.getElementById('adm_dia');
+                        // Obtener la fecha de hoy en formato ISO (YYYY-MM-DD)
+                        const hoy = new Date();
+                        const mesAdelante = new Date();
+                        mesAdelante.setMonth(hoy.getMonth() + 1); // Sumar un mes
+                        // Formatear las fechas al formato YYYY-MM-DD
+                        const formatoISO = (adm_dia) => adm_dia.toISOString().split('T')[0];
+                        // Establecer los valores de min y max
+                        inputFecha.min = formatoISO(hoy);
+                        inputFecha.max = formatoISO(mesAdelante);
+                    </script>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Hora de inicio</label>
+                        <input type="time" class="form-control" required name="horai_" id="horai_" min="06:00" max="22:00">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Hora de término</label>
+                        <input type="time" class="form-control" required name="horaf_" id="horaf_" min="06:00" max="22:00">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Red social 1</label>
+                        <select class="form-select form-control" id="red1_" name="red1_">
+                            <option value="Facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Discord">Discord</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Link 1</label>
+                        <input type="text" class="form-control" required id="link1_" name="link1_">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Red social 2</label>
+                        <select class="form-select form-control" id="red2_" name="red2_">
+                            <option value="Facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Discord">Discord</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Link 2</label>
+                        <input type="text" class="form-control" required id="link2_" name="link2_">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Imagen</label>
+                        <input type="file" class="form-control" required name="img_" id="img_" size="10">
+                    </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="modificar_adm">Modificar</button>
+                    <button type="button" class="btn btn-primary" id="modificar_adm">Agregar</button>
                 </form>
             </div>
         </div>
@@ -174,7 +302,7 @@ include("../Nav/navadmin.php");
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label" id="userlabel_elim">Título</label>
-                        <input type="text" class="form-control" id="usuario_elim" name="usuario_elim" readonly>
+                        <input type="text" class="form-control" id="tit_elim" name="tit_elim" readonly>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger" id="confim_elim">Eliminar</button>
@@ -189,6 +317,6 @@ include("../Nav/navadmin.php");
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
-<script src="../JS/funcioncrud.js"></script>
+<script src="../JS/funcionesEv.js"></script>
 </body>
 </html>

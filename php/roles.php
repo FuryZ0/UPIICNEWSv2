@@ -1,3 +1,4 @@
+<!-- No modificar este archivo - funcionamiento directo con base de datos -->
 <?php
 
 include('conexion.php');
@@ -12,11 +13,21 @@ while ($consulta = mysqli_fetch_array($datos)) {
 }
 
 if ($rol == 0) {
-    include("admin.php");
+    echo '
+    <script>
+    alert("No tienes acceso a esta página");
+    location.href = "../Nav/index.php";
+    </script>
+    ';
+    die();
 } else if ($rol == 1) {
-    include("editor.php");
-} else if ($rol == 2) {
-    include("admin.php");
+    echo '
+    <script>
+    alert("No tienes acceso a esta página");
+    location.href = "../Nav/index.php";
+    </script>
+    ';
+    die();
 }
 ?>
 

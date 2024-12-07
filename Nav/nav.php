@@ -1,3 +1,4 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -1,3 +1,4 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +10,7 @@
 <?php
 include("verifsesion.php");
 ?>
-<form action="../php/agregarev.php" method="POST" class="formulario_ingr" id="registro_for">
+<form action="../php/agregarev.php" method="POST" class="formulario_ingr" id="registro_for" enctype="multipart/form-data">
     <h2 class="info_h2">Registro de eventos</h2>
     <label class="form-label">Nombre</label>
     <input type="text" class="formula" required placeholder="Nombre de evento" maxlength="50" name="nombreev">
@@ -22,7 +23,7 @@ include("verifsesion.php");
         <option value="Esports">Esports</option>
     </select>
     <label class="form-label">Imagen</label>
-    <input type="text" class="formula" required placeholder="Imagen" name="imagen" maxlength="50">
+    <input type="file" class="formula" required name="imagen" size="10">
     <label class="form-label">Descripción de evento</label>
     <textarea class="formula" required name="descripev" maxlength="50"></textarea>
     <label class="form-label">Día</label>
@@ -59,7 +60,7 @@ include("verifsesion.php");
         <option value="WhatsApp">WhatsApp</option>
         <option value="Discord">Discord</option>
     </select>
-    <label class="form-label">Link de contacto:</label>
+    <label class="form-label">Link de contacto 1:</label>
     <input type="text" class="formula" required name="linkred1" maxlength="50">
     <label class="form-label">Red social 2:</label>
     <select class="form-select form-control" id="" name="red2">
@@ -68,7 +69,7 @@ include("verifsesion.php");
         <option value="WhatsApp">WhatsApp</option>
         <option value="Discord">Discord</option>
     </select>
-    <label class="form-label">Link de contacto:</label>
+    <label class="form-label">Link de contacto 2:</label>
     <input type="text" class="formula" required name="linkred2" maxlength="20">
     <input type="submit" class="enviar">
 </form>

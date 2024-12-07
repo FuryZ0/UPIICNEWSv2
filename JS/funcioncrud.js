@@ -1,3 +1,4 @@
+// No modificar este archivo - funcionamiento directo con base de datos
 function modificar(arreglo) {
     cadena = arreglo.split(',');
 

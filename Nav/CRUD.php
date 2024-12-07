@@ -1,3 +1,7 @@
+<!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
+<?php
+include('../php/roles.php');
+?>
 <!doctype html>
 <html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -73,19 +77,19 @@ include("../Nav/navadmin.php");
                 <form id="form_agr">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Usuario</label>
-                        <input type="text" class="form-control" id="adm_usuario" name="adm_usuario">
+                        <input type="text" class="form-control" required id="adm_usuario" name="adm_usuario">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="text" class="form-control" id="adm_correo" name="adm_correo">
+                        <input type="text" class="form-control" required id="adm_correo" name="adm_correo">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Contraseña</label>
-                        <input type="text" class="form-control" id="adm_contra" name="adm_contra">
+                        <input type="text" class="form-control" required id="adm_contra" name="adm_contra">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Rol</label>
-                        <select class="form-select form-control" id="adm_rol" name="adm_rol">
+                        <select class="form-select form-control" required id="adm_rol" name="adm_rol">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -110,24 +114,24 @@ include("../Nav/navadmin.php");
                 <form id="form_adm">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">ID</label>
-                        <input type="text" class="form-control" id="id_" name="id_" readonly>
+                        <input type="text" class="form-control" required id="id_" name="id_" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Usuario</label>
-                        <input type="text" class="form-control" id="usuario_" name="usuario_">
+                        <input type="text" class="form-control" required id="usuario_" name="usuario_">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="text" class="form-control" id="email_" name="email_">
+                        <input type="text" class="form-control" required id="email_" name="email_">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Contraseña</label>
-                        <input type="text" class="form-control" id="contra_" name="contra_">
+                        <input type="text" class="form-control" required id="contra_" name="contra_">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Rol</label>
-                        <select class="form-select form-control" id="rol_" name="rol_">
+                        <select class="form-select form-control" required id="rol_" name="rol_">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
