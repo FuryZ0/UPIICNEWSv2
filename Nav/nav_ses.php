@@ -16,7 +16,7 @@
         <a class="navbar-brand" href="index.php">
             <img src="../img/Logotipo.png" alt="logotipo" width="80">
         </a>
-        <a class="navbar-brand h1" href="index.php">UPIICNEWS</a>
+        <!-- <a class="navbar-brand h1" href="index.php">UPIICNEWS</a> -->
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +24,13 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
+               <!--  <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categorías</a>
-                </li>
+                </li>-->
 
 
                 <li class="nav-item dropdown">
@@ -43,6 +43,11 @@
                         <li><a class="dropdown-item" href="../php/cerrar_sesion.php">Cerrar sesion</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="usuario.php">
+                                <img src="../img/IniciarSesion.png" alt="logotipo" width="50">
+                            </a>
+                    </li>
             </ul>
         </div>
     </div>
