@@ -13,7 +13,52 @@ include("../php/segcode.php");
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container-fluid p-0">
+      <ul class="row text-center mb-3" style="list-style: none; padding: 0; margin: 0 0 10px 0;">
+          <li class="col p-0">
+              <a class="menu-item" href="#">Escolares</a>
+          </li>
+          <li class="col p-0">
+              <a class="menu-item" href="#">Comunitarios</a>
+          </li>
+          <li class="col p-0">
+              <a class="menu-item" href="#">Externos</a>
+          </li>
+          <li class="col p-0">
+              <a class="menu-item" href="#">Deportivos</a>
+          </li>
+          <li class="col p-0">
+              <a class="menu-item" href="#">Esports</a>
+          </li>
+          <li class="col p-0">
+              <a class="menu-item" href="#">Categorías</a>
+          </li>
+      </ul>
+    </div>
 
+    <style>
+      body {
+          margin: 0;
+      }
+
+      .menu-item {
+          display: block;
+          padding: 15px 0;
+          background-color: #FFFFFF;
+          color: black;
+          text-decoration: none;
+          border: 1px solid #95F818;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          transition: all 0s ease;
+      }
+
+      .menu-item:hover {
+          background-color: #95F818;
+          color: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+      }
+    </style>
 <?php
 include("verifsesion.php");
 include('../php/conexion.php');
@@ -62,7 +107,7 @@ if ($rol == 1 || $rol == 2) {
                             ?>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn"
                                     onclick="eliminar_ev('<?php echo $arreglo ?>')">
-                                <img src="../img/Eliminarpubli.png" alt="EliminaEvento" width="70">
+                                <img src="../img/Eliminarpubli.png" alt="EliminaEvento" width="30">
                             </button>
                             <?php
                         }

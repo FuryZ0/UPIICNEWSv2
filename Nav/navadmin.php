@@ -9,9 +9,14 @@ include('../php/roles.php');
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 120px;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg" style="background-color: #50f505">
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #50f505">
     <div class="container">
         <a class="navbar-brand" href="index.php">
             <img src="../img/Logotipo.png" alt="logotipo" width="80">

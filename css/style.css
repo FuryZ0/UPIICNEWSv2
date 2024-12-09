@@ -158,7 +158,7 @@ header{
 .formulario_ingr{
   width: 500px;
   max-width: 100%;
-  margin: 150px auto auto;
+  margin: 30px auto auto;
   padding: 20px;
   box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
   position: relative;
@@ -264,7 +264,7 @@ input.error {
   }
 
   header {
-    height: 70px;
+    height: 80px;
     position: fixed;
     width: 100%;
     background-color: rgba(80, 245, 5, 0.9);

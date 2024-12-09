@@ -8,8 +8,24 @@ include("../php/sesion_iniciada.php");
     <meta charset="UTF-8">
     <title>Iniciar sesion</title>
     <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .full-screen-banner {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: #95F818;
+                  color: black;
+                  font-size: 18px;
+                  height: 9vh;
+                  margin: 0;
+                  text-align: center;
+            }
+        </style>
 </head>
 <body>
+    <div class="full-screen-banner">
+            Inicio de sesion de usuario verificado
+        </div>
 <?php
 include("verifsesion.php");
 ?>
