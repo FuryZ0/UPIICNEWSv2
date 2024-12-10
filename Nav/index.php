@@ -79,7 +79,6 @@ if ($rol == 1 || $rol == 2) {
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
     <?php
     $data = mysqli_query($conexion, "SELECT * FROM eventos");
-
     while ($consulta = mysqli_fetch_array($data)) {
         $arreglo = $consulta['id_evento'] . ',' . $consulta['nombreev'];
 
