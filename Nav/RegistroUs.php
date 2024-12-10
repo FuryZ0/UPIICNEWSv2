@@ -8,8 +8,27 @@ include("../php/sesion_iniciada.php");
     <meta charset="UTF-8">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+                .full-screen-banner {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      background-color: #95F818;
+                      color: black;
+                      font-size: 18px;
+                      height: 9vh;
+                      margin: 0;
+                      text-align: center;
+                }
+            .formulario_ingr {
+                        margin-top: 15px;
+                    }
+            </style>
 </head>
 <body>
+    <div class="full-screen-banner">
+                Registro de nuevos usuarios
+            </div>
 <?php
 include("verifsesion.php");
 ?>

@@ -71,8 +71,8 @@ while ($consulta = mysqli_fetch_array($datos)) {
 <?php
 if ($rol == 1 || $rol == 2) {
 ?>
-    <a href="registevent.php"><img src="../img/Agregarpubli.png" alt="AgregaEvento" width="100"></a>
-    <p class="">Añadir nueva publicación</p>
+    <a href="registevent.php"><img src="../img/Agregarpubli.png" alt="AgregaEvento" width="50">Añadir nueva publicación</a>
+    <!-- <p class="">Añadir nueva publicación</p>-->
     <?php
 }
 ?>

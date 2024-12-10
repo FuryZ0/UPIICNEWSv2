@@ -5,27 +5,85 @@
     <meta charset="UTF-8">
     <title>Nuevo evento</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .row {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          flex: 1;
+        }
+
+        .form-label {
+          margin-bottom: 10px;
+        }
+
+        .formula,
+        textarea,
+        select {
+          width: 100%;
+          max-width: 300px;
+          text-align: center;
+        }
+    .full-screen-banner {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      background-color: #95F818;
+                      color: black;
+                      font-size: 18px;
+                      height: 9vh;
+                      margin: 0;
+                      text-align: center;
+                }
+            .formulario_ingr {
+                        margin-top: 15px;
+                    }
+    </style>
 </head>
 <body>
+    <div class="full-screen-banner">
+                Registro de eventos
+            </div>
 <?php
 include("verifsesion.php");
 ?>
-<form action="../php/agregarev.php" method="POST" class="formulario_ingr" id="registro_eve" enctype="multipart/form-data">
-    <h2 class="info_h2">Registro de eventos</h2>
+<form action="../php/agregarev.php" method="POST" class="formulario_ingre" id="registro_eve" enctype="multipart/form-data">
+    <!--<h2 class="info_h2 mb-3">Registro de eventos</h2>-->
+    <div class="row">
+        <div class="col">
     <label class="form-label">Nombre</label>
     <input type="text" class="formula" required placeholder="Nombre de evento" minlength="10" maxlength="50" name="nombreev">
+        </div>
+        <div class="col">
     <label class="form-label">Categoría</label>
-    <select class="form-select form-control" id="categoriaev" name="categoriaev">
+    <select class="form-select form-control mt-4" id="categoriaev" name="categoriaev">
         <option value="Escolares">Escolares</option>
         <option value="Comunitarios">Comunitarios</option>
         <option value="Externos">Externos</option>
         <option value="Deportivos">Deportivos</option>
         <option value="Esports">Esports</option>
     </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <label class="form-label">Imagen</label>
     <input type="file" class="formula" required id="imagen" name="imagen" size="10">
+        </div>
+        <div class="col">
     <label class="form-label">Descripción de evento</label>
     <textarea class="formula" required id="descripev" name="descripev" maxlength="50"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <label class="form-label">Día</label>
     <input type="date" class="formula" name="diaev" required id="diaev">
     <script>
@@ -41,36 +99,58 @@ include("verifsesion.php");
         inputFecha.min = formatoISO(hoy);
         inputFecha.max = formatoISO(mesAdelante);
     </script>
+        </div>
+        <div class="col">
     <label class="form-label">Ubicación</label>
-    <select class="form-select form-control" id="ubiev" name="ubiev">
+    <select class="form-select form-control mt-4" id="ubiev" name="ubiev">
         <option value="Estacionamiento">Estacionamiento</option>
         <option value="AuditorioA">Auditorio A</option>
         <option value="AuditorioB">Auditorio B</option>
         <option value="Pecera">Pecera</option>
         <option value="Campoamericano">Campo de americano</option>
     </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <label class="form-label">Hora de inicio:</label>
     <input type="time" class="formula" required id="horain" name="horain" min="06:00" max="22:00">
+        </div>
+        <div class="col">
     <label class="form-label">Hora de finalización:</label>
     <input type="time" class="formula" required id="horafin" name="horafin" min="06:00" max="22:00">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <label class="form-label">Red social 1:</label>
-    <select class="form-select form-control" id="red1" name="red1">
+    <select class="form-select form-control mt-4" id="red1" name="red1">
         <option value="Facebook">Facebook</option>
         <option value="Instagram">Instagram</option>
         <option value="WhatsApp">WhatsApp</option>
         <option value="Discord">Discord</option>
     </select>
+        </div>
+        <div class="col">
     <label class="form-label">Link de contacto 1:</label>
     <input type="text" class="formula" required name="linkred1" id="linkred1" maxlength="50">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <label class="form-label">Red social 2:</label>
-    <select class="form-select form-control" id="red2" name="red2">
+    <select class="form-select form-control mt-4" id="red2" name="red2">
         <option value="Facebook">Facebook</option>
         <option value="Instagram">Instagram</option>
         <option value="WhatsApp">WhatsApp</option>
         <option value="Discord">Discord</option>
     </select>
+        </div>
+        <div class="col">
     <label class="form-label">Link de contacto 2:</label>
     <input type="text" class="formula" required name="linkred2" id="linkred2" maxlength="20">
+        </div>
+    </div>
     <input type="submit" class="enviar">
 </form>
 <script>

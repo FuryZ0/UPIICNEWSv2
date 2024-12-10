@@ -16,7 +16,7 @@
         <a class="navbar-brand" href="index.php">
             <img src="../img/Logotipo.png" alt="logotipo" width="80">
         </a>
-        <!-- <a class="navbar-brand h1" href="index.php">UPIICNEWS</a> -->
+        <!-- <a class="navbar-brand h1">UPIICNEWS</a>-->
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+             <a class="navbar-brand">UPIICNEWS</a>
              <ul class="navbar-nav ms-auto d-flex align-items-center">
                  <li class="nav-item">
                    <a class="navbar-brand" href="InicioSesion.php">Iniciar sesión</a>

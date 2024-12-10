@@ -39,7 +39,7 @@
                         ¡Hola <?php echo $_SESSION['cliente']; ?>!
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="usuario.php">Perfil</a></li>
+                        <!-- <li><a class="dropdown-item" href="usuario.php">Perfil</a></li>-->
                         <li><a class="dropdown-item" href="../php/cerrar_sesion.php">Cerrar sesion</a></li>
                     </ul>
                 </li>

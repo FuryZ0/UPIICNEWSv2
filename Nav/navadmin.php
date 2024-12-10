@@ -11,7 +11,7 @@ include('../php/roles.php');
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <style>
         body {
-            padding-top: 120px;
+            padding-top: 100px;
         }
     </style>
 </head>

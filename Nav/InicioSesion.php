@@ -20,6 +20,9 @@ include("../php/sesion_iniciada.php");
                   margin: 0;
                   text-align: center;
             }
+        .formulario_ingr {
+                    margin-top: 15px;
+                }
         </style>
 </head>
 <body>
@@ -30,7 +33,7 @@ include("../php/sesion_iniciada.php");
 include("verifsesion.php");
 ?>
 <form action="../php/login.php" method="POST" class="formulario_ingr" id="inicios_for">
-    <h2 class="info_h2">Acceder</h2>
+    <h1 class="info_h1 text-center">Acceder</h1>
     <input type="text" class="formula" required placeholder="&#128113; Usuario" name="usuario" maxlength="10">
     <input type="password" class="formula" required placeholder="&#128272; Contraseña" name="pass" maxlength="20">
     <input type="submit" class="enviar">
