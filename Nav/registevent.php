@@ -188,5 +188,20 @@ include("verifsesion.php");
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script>
 <script type="text/javascript" src="../JS/funciones.js"></script>
+<script>
+    // Obtener todos los campos de entrada, texto, selección y área de texto del formulario
+    const camposFormulario = document.querySelectorAll("#registro_eve input, #registro_eve select, #registro_eve textarea");
+
+    // Agregar un evento a cada campo para cambiar el borde al color verde cuando sea modificado
+    camposFormulario.forEach(campo => {
+        campo.addEventListener("input", () => {
+            campo.style.borderColor = "#95F818"; // Cambia el color del borde
+        });
+
+        campo.addEventListener("change", () => {
+            campo.style.borderColor = "#95F818"; // Cambia el color del borde
+        });
+    });
+</script>
 </body>
 </html>

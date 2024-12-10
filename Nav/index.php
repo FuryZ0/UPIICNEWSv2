@@ -75,7 +75,7 @@ if ($rol == 1 || $rol == 2) {
     <?php
 }
 ?>
-
+<h2 class="mt-3 mb-2 text-center">Eventos Destacados</h2>
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
     <?php
     $data = mysqli_query($conexion, "SELECT * FROM eventos");
@@ -85,42 +85,30 @@ if ($rol == 1 || $rol == 2) {
 
         ?>
 
-        <div class="container2 mt-4">
-          <div class="row2 g-4 justify-content-center">
-            <!-- Tarjeta 1 -->
-            <div class="col2-12 col2-md-6 col2-lg-4">
-              <div class="card2 mb-3">
-                <div class="row2 g-0">
-                  <div class="col2-md-4">
-                    <img src="../<?php echo $consulta['imgeve']; ?>" class="img-fluid rounded-start" alt="Imagen del evento">
-                  </div>
-                  <div class="col2-md-8">
-                    <div class="card2-body">
-                      <h5 class="card2-title"><?php echo $consulta['nombreev']; ?></h5>
-                      <p class="card2-text">
-                        <img src="../img/Manoarriba.png" alt="Likes" width="30"> <?php echo $consulta['numlikesev']; ?>
-                        <br>Descripción: <?php echo $consulta['descripcionev']; ?>
-                        <br>Día: <?php echo $consulta['diaev']; ?>
-                        <br>Horario: De <?php echo $consulta['horainicioev']; ?> a <?php echo $consulta['horafinev']; ?>
-                        <br>Ubicación: <?php echo $consulta['ubicacionev']; ?>
-                        <br>Contacto 1: <?php echo $consulta['redsocial1ev']; ?> <?php echo $consulta['linkred1']; ?>
-                        <br>Contacto 2: <?php echo $consulta['redsocial2ev']; ?> <?php echo $consulta['linkred2']; ?>
-                        <br>Tag: <?php echo $consulta['tagsev']; ?>
-                      </p>
-                      <?php if ($rol == 2) { ?>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn eliminar-btn"
-                          onclick="eliminar_ev('<?php echo $arreglo ?>')">
-                          <img src="../img/Eliminarpubli.png" alt="Eliminar Evento" class="eliminar-img" width="30">
-                        </button>
-                      <?php } ?>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
+<div class="container2-fluid">
+  <div class="card2">
+    <img src="../<?php echo $consulta['imgeve']; ?>" alt="Evento">
+    <div class="card-body">
+      <h5 class="card-title"><?php echo $consulta['nombreev']; ?></h5>
+      <p class="card-text">
+        <img src="../img/Manoarriba.png" alt="Numlikes" width="30"> <?php echo $consulta['numlikesev']; ?>
+        <br>Descripción: <?php echo $consulta['descripcionev']; ?>
+        <br>Día: <?php echo $consulta['diaev']; ?>
+        <br>Horario: De <?php echo $consulta['horafinev']; ?> a <?php echo $consulta['horainicioev']; ?>
+        <br>Ubicación: <?php echo $consulta['ubicacionev']; ?>
+        <br>Contacto 1: <?php echo $consulta['redsocial1ev']; ?> <?php echo $consulta['linkred1']; ?>
+        <br>Contacto 2: <?php echo $consulta['redsocial2ev']; ?> <?php echo $consulta['linkred2']; ?>
+        <br>Tag: <?php echo $consulta['tagsev']; ?>
+        <?php if ($rol == 2) { ?>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn"
+          onclick="eliminar_ev('<?php echo $arreglo ?>')">
+          <img src="../img/Eliminarpubli.png" alt="EliminaEvento" width="30">
+        </button>
+        <?php } ?>
+      </p>
+    </div>
+  </div>
+</div>
 
 
         <?php

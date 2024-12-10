@@ -283,26 +283,48 @@ select:focus {
   border: none;
 }
 
+/* Estilo general de la tarjeta */
 .card2 {
-  width: 95%;
-  margin: 10px auto;
-  border: 1px solid #d3d3d3;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 95%; /* Reduce el tamaño en un 5% */
+    margin: 10px auto; /* Centra las tarjetas con un pequeño margen */
+    border: 1px solid #d3d3d3; /* Borde gris claro */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Mantiene la imagen y el contenido en la misma fila */
+    flex-direction: row; /* Disposición horizontal */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Evita que el contenido sobresalga */
 }
 
+/* Imagen de la tarjeta */
+.card2 img {
+    flex: 0 0 40%; /* La imagen ocupa el 40% del ancho */
+    max-width: 100%; /* Asegura que no se deforme */
+    height: auto; /* Mantiene las proporciones */
+    object-fit: cover; /* Recorta para encajar en el contenedor */
+    border-radius: 10px 0 0 10px; /* Redondea las esquinas izquierdas */
+}
+
+/* Contenido de la tarjeta */
+.card2 .card-body {
+    flex: 1; /* El contenido ocupa el resto del espacio */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+/* Efecto de hover */
 .card2:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Zoom suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
+/* Contenedor general */
 .container2-fluid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite varias filas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 15px; /* Espacio entre tarjetas */
+    padding: 10px; /* Margen alrededor del contenedor */
 }
