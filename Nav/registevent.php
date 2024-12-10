@@ -1,4 +1,8 @@
 <!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
+<?php
+include("../php/sesion_noinic.php");
+include("../php/roles.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +46,7 @@
                       margin: 0;
                       text-align: center;
                 }
-            .formulario_ingr {
+            .formulario_ingre {
                         margin-top: 15px;
                     }
     </style>
@@ -79,7 +83,7 @@ include("verifsesion.php");
         </div>
         <div class="col">
     <label class="form-label">Descripción de evento</label>
-    <textarea class="formula1" required id="descripev" name="descripev" maxlength="50"></textarea>
+    <textarea class="formula1" required id="descripev" name="descripev" maxlength="100"></textarea>
         </div>
     </div>
     <div class="row">
@@ -148,7 +152,7 @@ include("verifsesion.php");
         </div>
         <div class="col">
     <label class="form-label">Link de contacto 2:</label>
-    <input type="text" class="formula1" required name="linkred2" id="linkred2" maxlength="20">
+    <input type="text" class="formula1" required name="linkred2" id="linkred2" maxlength="50">
         </div>
     </div>
     <input type="submit" class="enviar">

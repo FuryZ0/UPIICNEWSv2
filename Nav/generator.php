@@ -1,5 +1,6 @@
 <!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
 <?php
+include("../php/sesion_noinic.php");
 $num = rand(999, 10000);
 session_start();
 include('../php/conexion.php');

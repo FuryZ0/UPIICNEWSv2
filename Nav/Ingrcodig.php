@@ -1,4 +1,7 @@
 <!-- Archivo modificable con precaución - No alterar las partes donde se usa php o JS ni cambiar nombres o ids de formulario -->
+<?php
+include("../php/sesion_noinic.php");
+?>
 <!doctype html>
 <html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
