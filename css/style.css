@@ -252,7 +252,7 @@ input.error {
   height: 100vh;
 }
 
-.formula,
+.formula1,
 textarea,
 select {
   width: 100%;
@@ -266,10 +266,43 @@ select {
   transition: all 0.3s ease;
 }
 
-.formula:focus,
+.formula1:focus,
 textarea:focus,
 select:focus {
   border-color: #95F818;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
   outline: none;
+}
+
+.formula1, .enviar{
+  display: block;
+  padding: 20px;
+  width: 100%;
+  margin: 30px 0px;
+  font-size: 20px;
+  border: none;
+}
+
+.card2 {
+  width: 95%;
+  margin: 10px auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container2-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
 }

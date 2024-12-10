@@ -29,13 +29,7 @@ include('../php/roles.php');
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorías</a>
-                </li>
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="CRUD.php">Administrar usuarios</a>
                 </li>
@@ -50,9 +44,13 @@ include('../php/roles.php');
                         ¡Hola <?php echo $_SESSION['cliente']; ?>!
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="usuario.php">Perfil</a></li>
                         <li><a class="dropdown-item" href="../php/cerrar_sesion.php">Cerrar sesion</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="usuario.php">
+                        <img src="../img/IniciarSesion.png" alt="logotipo" width="50">
+                    </a>
                 </li>
             </ul>
         </div>

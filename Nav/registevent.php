@@ -59,7 +59,7 @@ include("verifsesion.php");
     <div class="row">
         <div class="col">
     <label class="form-label">Nombre</label>
-    <input type="text" class="formula" required placeholder="Nombre de evento" minlength="10" maxlength="50" name="nombreev">
+    <input type="text" class="formula1" required placeholder="Nombre de evento" minlength="10" maxlength="50" name="nombreev">
         </div>
         <div class="col">
     <label class="form-label">Categoría</label>
@@ -75,17 +75,17 @@ include("verifsesion.php");
     <div class="row">
         <div class="col">
     <label class="form-label">Imagen</label>
-    <input type="file" class="formula" required id="imagen" name="imagen" size="10">
+    <input type="file" class="formula1" required id="imagen" name="imagen" size="10">
         </div>
         <div class="col">
     <label class="form-label">Descripción de evento</label>
-    <textarea class="formula" required id="descripev" name="descripev" maxlength="50"></textarea>
+    <textarea class="formula1" required id="descripev" name="descripev" maxlength="50"></textarea>
         </div>
     </div>
     <div class="row">
         <div class="col">
     <label class="form-label">Día</label>
-    <input type="date" class="formula" name="diaev" required id="diaev">
+    <input type="date" class="formula1" name="diaev" required id="diaev">
     <script>
         // Obtener el input de tipo date
         const inputFecha = document.getElementById('diaev');
@@ -114,11 +114,11 @@ include("verifsesion.php");
     <div class="row">
         <div class="col">
     <label class="form-label">Hora de inicio:</label>
-    <input type="time" class="formula" required id="horain" name="horain" min="06:00" max="22:00">
+    <input type="time" class="formula1" required id="horain" name="horain" min="06:00" max="22:00">
         </div>
         <div class="col">
     <label class="form-label">Hora de finalización:</label>
-    <input type="time" class="formula" required id="horafin" name="horafin" min="06:00" max="22:00">
+    <input type="time" class="formula1" required id="horafin" name="horafin" min="06:00" max="22:00">
         </div>
     </div>
     <div class="row">
@@ -133,7 +133,7 @@ include("verifsesion.php");
         </div>
         <div class="col">
     <label class="form-label">Link de contacto 1:</label>
-    <input type="text" class="formula" required name="linkred1" id="linkred1" maxlength="50">
+    <input type="text" class="formula1" required name="linkred1" id="linkred1" maxlength="50">
         </div>
     </div>
     <div class="row">
@@ -148,7 +148,7 @@ include("verifsesion.php");
         </div>
         <div class="col">
     <label class="form-label">Link de contacto 2:</label>
-    <input type="text" class="formula" required name="linkred2" id="linkred2" maxlength="20">
+    <input type="text" class="formula1" required name="linkred2" id="linkred2" maxlength="20">
         </div>
     </div>
     <input type="submit" class="enviar">
