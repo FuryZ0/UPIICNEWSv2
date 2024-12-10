@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
              <ul class="navbar-nav ms-auto d-flex align-items-center">
                  <li class="nav-item">
-                   <a class="navbar-brand" href="InicioSesion.php">Iniciar Sesion</a>
+                   <a class="navbar-brand" href="InicioSesion.php">Iniciar sesión</a>
                   </li>
             <!--<li class="nav-item">
                     <a class="nav-link" href="#">Categorías</a>

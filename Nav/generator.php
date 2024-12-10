@@ -18,8 +18,6 @@ $change = mysqli_query($conexion, "UPDATE usuarios SET autentificacion = '$num' 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UPIICNEWS</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 </head>
 <body>
@@ -27,15 +25,11 @@ $change = mysqli_query($conexion, "UPDATE usuarios SET autentificacion = '$num' 
 include("../Nav/verifsesion.php");
 ?>
 <div class="alert alert-primary" role="alert">
-    <h4 class="alert-heading text-center">¡Graciar por fomar parte!</h4>
-    <p>Sabemos que es la primera vez logeando...</p>
-    <p class="mb-o">Tu código es: <?php echo $num ?></p>
+    <h4 class="alert-heading text-center">¡Graciar por fomar parte de UPIICNEWS!</h4>
+    <p class="text-center">Sabemos que es la primera vez logeando por lo que te pedimos que verifiques tu correo electrónico con el código que te enviamos.</p>
+    <p class="mb-o text-center">Tu código es: <?php echo $num ?></p>
 </div>
-<a class="btn btn-primary" href="usuario.php">Ir al perfil</a>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<a class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto" href="usuario.php">Ir al perfil</a>
 </body>
 </body>
 </html>

@@ -16,10 +16,10 @@ include('../php/roles.php');
 <?php
 include("../Nav/navadmin.php");
 ?>
-<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-primary d-flex mx-auto mb-3">
+<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-dark d-flex mx-auto mb-3">
     Agregar evento
 </button>
-<table class="table table-light table-hover" id="table_adm">
+<table class="table table-light table-hover table-responsive-sm border-dark border-2 border-opacity-75" id="table_adm">
     <thead>
     <tr>
         <th>ID</th>
@@ -68,12 +68,12 @@ include("../Nav/navadmin.php");
         <td><?php echo $consulta['linkred2']; ?></td>
         <td><?php echo $consulta['imgeve']; ?></td>
         <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-success"
+            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-outline-secondary"
                     onclick="modificar('<?php echo $arreglo ?>')">Modificar
             </button>
         </td>
         <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-danger"
+            <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-outline-danger"
                     onclick="eliminar('<?php echo $arreglo ?>')">Eliminar
             </button>
         </td>
@@ -176,13 +176,38 @@ include("../Nav/navadmin.php");
                             <input type="file" class="form-control" required name="adm_img" id="adm_img" size="10">
                         </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="agregar_adm">Agregar</button>
+                    <button type="button" class="btn btn-success" id="agregar_adm">Agregar</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const horaInicio = document.getElementById('adm_horai');
+    const horaFin = document.getElementById('adm_horaf');
 
+    // Actualizar el mínimo del input "horaFin" en función del valor de "horaInicio"
+    horaInicio.addEventListener('input', () => {
+        const valorInicio = horaInicio.value;
+
+        // Si se selecciona una hora válida, ajustar el mínimo de "horaFin"
+        if (valorInicio) {
+            horaFin.min = valorInicio;
+        } else {
+            horaFin.min = "06:00"; // Restaurar mínimo si el valor es inválido
+        }
+    });
+
+    // Validar que el valor seleccionado en "horaFin" respete el mínimo
+    horaFin.addEventListener('input', () => {
+        const valorFin = horaFin.value;
+
+        if (valorFin && valorFin < horaFin.min) {
+            alert("La hora de fin no puede ser menor que la hora de inicio.");
+            horaFin.value = ""; // Borrar el valor no válido
+        }
+    });
+</script>
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -280,13 +305,38 @@ include("../Nav/navadmin.php");
                         <input type="file" class="form-control" required name="img_" id="img_" size="10">
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="modificar_adm">Agregar</button>
+                    <button type="button" class="btn btn-success" id="modificar_adm">Agregar</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const horaInicio = document.getElementById('horai_');
+    const horaFin = document.getElementById('horaf_');
 
+    // Actualizar el mínimo del input "horaFin" en función del valor de "horaInicio"
+    horaInicio.addEventListener('input', () => {
+        const valorInicio = horaInicio.value;
+
+        // Si se selecciona una hora válida, ajustar el mínimo de "horaFin"
+        if (valorInicio) {
+            horaFin.min = valorInicio;
+        } else {
+            horaFin.min = "06:00"; // Restaurar mínimo si el valor es inválido
+        }
+    });
+
+    // Validar que el valor seleccionado en "horaFin" respete el mínimo
+    horaFin.addEventListener('input', () => {
+        const valorFin = horaFin.value;
+
+        if (valorFin && valorFin < horaFin.min) {
+            alert("La hora de fin no puede ser menor que la hora de inicio.");
+            horaFin.value = ""; // Borrar el valor no válido
+        }
+    });
+</script>
 <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

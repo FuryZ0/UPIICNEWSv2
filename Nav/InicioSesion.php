@@ -36,6 +36,7 @@ include("verifsesion.php");
     <input type="submit" class="enviar">
     <p class="info_h2">¿No tienes aún una cuenta? <a href="RegistroUs.php" class="titmenu">Haz clic aquí para
             registrarte</a></p>
+    <p class="info_h2">Perdiste el acceso a tu cuenta? <a href="#" class="titmenu">Da click aquí para restablecer tu contraseña</a></p>
 </form>
 </body>
 </html>

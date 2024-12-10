@@ -23,17 +23,17 @@ $(document).ready(function () {
             usuario: {
                 required: "El nombre de usuario es requerido",
                 minlength: "El nombre de usuario debe contener al menos 5 caracteres",
-                maxLength: "El nombre de usuario debe contener 10 caracteres maximo"
+                maxLength: "El nombre de usuario debe contener 10 caracteres máximo"
             },
             email: {
                 required: "El email es requerido",
                 email: "El email no es valido",
-                maxLength: "El email debe contener 50 caracteres maximo"
+                maxLength: "El email debe contener 50 caracteres máximo"
             },
             contra: {
                 required: "La contraseña es requerida",
                 minlength: "La contraseña debe contener al menos 8 caracteres",
-                maxLength: "La contraseña debe contener 20 caracteres maximo"
+                maxLength: "La contraseña debe contener 20 caracteres máximo"
             }
         }
     });
@@ -87,4 +87,81 @@ $('#actualizar').click(function () {
             }
         }
     })
+});
+
+$(document).ready(function () {
+
+    $("#registro_eve").validate({
+
+        rules: {
+            nombreev: {
+                required: true,
+                minlength: 10,
+                maxLength: 50
+            },
+            imagen: {
+                required: true,
+                extension: "jpg|jpeg|png"
+            },
+            descripev: {
+                required: true,
+                minlength: 10,
+                maxLength: 100
+            },
+            diaev: {
+                required: true
+            },
+            horain: {
+                required: true
+            },
+            horafin: {
+                required: true
+            },
+            linkred1: {
+                required: true,
+                maxLength: 100,
+                url: true
+            },
+            linkred2: {
+                required: true,
+                maxLength: 100,
+                url: true
+            }
+        },
+        messages: {
+            nombreev: {
+                required: "El título es requerido",
+                minlength: "El título debe contener al menos 10 caracteres",
+                maxLength: "El título debe contener 50 caracteres máximo"
+            },
+            imagen: {
+                required: "La imagen es requerida",
+                extension: "Solo archivos con extensión jpg, jpeg o png"
+            },
+            descripev: {
+                required: "La descripción es requerida",
+                minlength: "La descripción debe contener al menos 10 caracteres",
+                maxLength: "La descripción debe contener 50 caracteres máximo"
+            },
+            diaev: {
+                required: "El día es requerido"
+            },
+            horain: {
+                required: "La hora de inicio es requerida"
+            },
+            horafin: {
+                required: "La hora de finalización es requerida"
+            },
+            linkred1: {
+                required: "El link de la red social uno es requerida",
+                maxLength: "El link debe contener máximo 100 caracteres",
+                url: "Solo links"
+            },
+            linkred2: {
+                required: "El link de la red social dos es requerida",
+                maxLength: "El link debe contener máximo 100 caracteres",
+                url: "Solo links"
+            }
+        }
+    });
 });

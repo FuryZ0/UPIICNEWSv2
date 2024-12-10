@@ -18,12 +18,10 @@ include("../php/segcode.php");
 <?php
 include("verifsesion.php");
 ?>
-<h1>Bienvenido <?php echo $_SESSION['cliente']; ?></h1>
-
 <div class="perfil">
-    <h1 class="display-4 text-center my-5">Informacion del perfil</h1>
+    <h1 class="display-4 text-center my-5">Información del perfil</h1>
     <div>
-        <table class="table table-light table-hover mx-auto text-center" id="tabla_user">
+        <table class="table table-light table-hover mx-auto text-center border-dark border-2 border-opacity-75" id="tabla_user">
             <?php
             $cliente = $_SESSION['cliente'];
             $data = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$cliente'");
@@ -48,9 +46,9 @@ include("verifsesion.php");
         </table>
     </div>
     <div class="cont_boton">
-        <input type="button" class="btn btn-success boton" name="Modf" value="Modificar datos" data-bs-toggle="modal"
+        <input type="button" class="btn btn-outline-secondary boton" name="Modf" value="Modificar datos" data-bs-toggle="modal"
                data-bs-target="#mod_per">
-        <input type="button" class="btn btn-danger boton" name="Elim" value="Eliminar cuenta" data-bs-toggle="modal"
+        <input type="button" class="btn btn-outline-danger boton" name="Elim" value="Eliminar cuenta" data-bs-toggle="modal"
                data-bs-target="#elim_per">
     </div>
 </div>
@@ -100,7 +98,7 @@ include("verifsesion.php");
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="actualizar">Confirmar cambios</button>
+                <button type="button" class="btn btn-success" id="actualizar">Confirmar cambios</button>
             </div>
         </div>
     </div>

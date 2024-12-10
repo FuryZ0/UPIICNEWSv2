@@ -16,10 +16,10 @@ include('../php/roles.php');
 <?php
 include("../Nav/navadmin.php");
 ?>
-<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-primary d-flex mx-auto mb-3">
+<button type="button" data-bs-toggle="modal" data-bs-target="#agregar" class="btn btn-dark d-flex mx-auto mb-3">
     Agregar usuario
 </button>
-<table class="table table-light table-hover" id="table_adm">
+<table class="table table-light table-hover border-dark border-2 border-opacity-75" id="table_adm">
     <thead>
     <tr>
         <th>ID</th>
@@ -48,12 +48,12 @@ include("../Nav/navadmin.php");
         <td><?php echo $consulta['contrasena']; ?></td>
         <td><?php echo $consulta['rol']; ?></td>
         <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-success"
+            <button type="button" data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-outline-secondary"
                     onclick="modificar('<?php echo $arreglo ?>')">Modificar
             </button>
         </td>
         <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-danger"
+            <button type="button" data-bs-toggle="modal" data-bs-target="#eliminar" class="btn btn-outline-danger"
                     onclick="eliminar('<?php echo $arreglo ?>')">Eliminar
             </button>
         </td>
@@ -62,9 +62,7 @@ include("../Nav/navadmin.php");
     }
     ?>
 </table>
-<footer class="foot">
-    <p class="foot_p">Pagina web protegida por JOHNYCOP &copy;</p>
-</footer>
+
 
 <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -96,7 +94,7 @@ include("../Nav/navadmin.php");
                         </select>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="agregar_adm">Agregar</button>
+                    <button type="button" class="btn btn-success" id="agregar_adm">Agregar</button>
                 </form>
             </div>
         </div>
@@ -138,7 +136,7 @@ include("../Nav/navadmin.php");
                         </select>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="modificar_adm">Modificar</button>
+                    <button type="button" class="btn btn-success" id="modificar_adm">Modificar</button>
                 </form>
             </div>
         </div>

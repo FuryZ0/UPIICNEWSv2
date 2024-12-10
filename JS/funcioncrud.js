@@ -88,7 +88,7 @@ $('#confim_elimev').click(function () {
         data: recolec,
 
         success: function (vs) {
-            $('#col').load('../Nav/index.php #col');
+            location.reload();
             $('#eliminar').modal('hide');
             $('body').removeClass('modal-open');
             $('.modal-backdrop').hide();
